@@ -16,8 +16,10 @@ public class testConversionObj {
         
         empleado1 = new Escritor("Juan", 'H', true, Tipo_Escritura.CLASICO);
         
-        System.out.println(empleado1.obtenerDetaller());
+        //System.out.println(empleado1.obtenerDetaller());
         //System.out.println("empleado1 = " + empleado1);
+        
+        System.out.println(((Escritor)empleado1).getTipoEscritura());
     }
     
 }
