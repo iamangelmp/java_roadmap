@@ -9,21 +9,13 @@ package domain;
  * @author Alexis
  */
 public abstract class FiguraGeometrica {
+
     protected String tipoFigura;
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("FiguraGeometrica{");
-        sb.append("tipoFigura=").append(tipoFigura);
-        sb.append('}');
-        return sb.toString();
-    }
-    
     public abstract void dibujarFigura();
-    
-    protected FiguraGeometrica(String tipoFigura){
-    this.tipoFigura = tipoFigura;
+
+    protected FiguraGeometrica(String tipoFigura) {
+        this.tipoFigura = tipoFigura;
     }
 
     public String getTipoFigura() {
@@ -33,7 +25,14 @@ public abstract class FiguraGeometrica {
     public void setTipoFigura(String tipoFigura) {
         this.tipoFigura = tipoFigura;
     }
-    
-    
-    
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("FiguraGeometrica{");
+        sb.append("tipoFigura=").append(tipoFigura);
+        sb.append('}');
+        return sb.toString();
+    }
+
 }

@@ -4,12 +4,19 @@
  */
 package test;
 
+import domain.FiguraGeometrica;
+import domain.Rectangulo;
+
 /**
  *
  * @author Alexis
  */
 public class TestClasesAbstractas {
+
     public static void main(String[] args) {
-        System.out.println("hello");
+        FiguraGeometrica fig1 = new Rectangulo("rectangulo");
+
+        fig1.dibujarFigura();
+
     }
 }
