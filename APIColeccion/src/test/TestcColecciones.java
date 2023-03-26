@@ -11,6 +11,7 @@ import java.util.*;
  * @author Alexis
  */
 public class TestcColecciones {
+
 	public static void main(String[] args) {
 		List semana = new ArrayList();
 		semana.add("Lunes");
@@ -18,9 +19,15 @@ public class TestcColecciones {
 		semana.add("Miercoles");
 		semana.add("Jueves");
 		semana.add("Viernes");
-		
-		for (Object dia: semana){
-			System.out.println("dia: "+ dia);
+
+		//using a native foreach
+		for (Object dia : semana) {
+			System.out.println("dia: " + dia);
 		}
+
+		//using an lambda expresion (arrow function)
+		semana.forEach(dia -> {
+			System.out.println("dia: " + dia);
+		});
 	}
 }
