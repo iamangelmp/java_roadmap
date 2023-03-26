@@ -24,12 +24,15 @@ public class TestExcepciones {
 //            System.out.println("resultado = " + resultado);  
 //        }
 		try {
-			resultado = Aritmetica.division(10, 2);
+			resultado = Aritmetica.division(10, 0);
 			System.out.println("resultado = " + resultado);
 		} catch (Exception e) {
 			System.out.println("Ocurrio un error");
 			//e.printStackTrace();
-			e.printStackTrace(System.out);
+			//e.printStackTrace(System.out);
+			System.out.println(e.getMessage());
+		}finally{
+			System.out.println("se revisio la division	");
 		}
 
 	}
