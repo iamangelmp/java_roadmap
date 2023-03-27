@@ -32,7 +32,18 @@ public class TestcColecciones {
 		meses.add("abril");
 		meses.add("mayo");
 		
-		imprimir(meses);
+		//imprimir(meses);
+		
+		//imprime set
+		Map frutas = new HashMap();
+		frutas.put("1", "enero");
+		frutas.put("2", "febrero");
+		frutas.put("3", "marzo");
+		frutas.put("4", "abril");
+		frutas.put("5", "mayo");
+		
+		System.out.println(frutas.get("1"));
+		
 
 	}
 
