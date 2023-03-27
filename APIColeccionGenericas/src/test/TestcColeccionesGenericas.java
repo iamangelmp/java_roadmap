@@ -22,21 +22,22 @@ public class TestcColeccionesGenericas {
 		semana.add("Jueves");
 		semana.add("Viernes");
                                     		
-		imprimir(semana);
-                                    System.out.println("semana: "+ semana.get(0));
+		//imprimir(semana);
+                                   // System.out.println("semana: "+ semana.get(0));
 		
 		//Set and hashSet
-		Set meses = new HashSet();
+		Set<String> meses = new HashSet<>();
 		meses.add("enero");
 		meses.add("febrero");
 		meses.add("marzo");
 		meses.add("abril");
 		meses.add("mayo");
+                                    
 		
 		//imprimir(meses);
 		
 		//imprime set
-		Map frutas = new HashMap();
+		Map<String, String> frutas = new HashMap<>();
 		frutas.put("1", "enero");
 		frutas.put("2", "febrero");
 		frutas.put("3", "marzo");
