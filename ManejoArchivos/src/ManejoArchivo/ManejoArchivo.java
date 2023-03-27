@@ -13,7 +13,7 @@ import java.io.PrintWriter;
  * @author Ebit PC 2
  */
 public class ManejoArchivo {
-    public static void crearArchivo(String nombreArchivo) throws FileNotFoundException{
+    public static void crearArchivo(String nombreArchivo) {
         File archivo = new File(nombreArchivo);
         try{
             PrintWriter salida = new PrintWriter(archivo);

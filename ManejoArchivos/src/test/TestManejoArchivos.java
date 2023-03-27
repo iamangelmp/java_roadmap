@@ -4,12 +4,14 @@
  */
 package test;
 
+import static ManejoArchivo.ManejoArchivo.crearArchivo;
 /**
  *
  * @author Ebit PC 2
  */
 public class TestManejoArchivos {
     public static void main(String[] args) {
-        System.out.println("hello");
+        var nombreDoc = "prueba.txt";
+        crearArchivo(nombreDoc);
     }
 }
