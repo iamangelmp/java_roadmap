@@ -25,4 +25,18 @@ public class ManejoArchivo {
             System.out.println(e.getMessage());
         }
     }
+    
+    public static void escribirArchivo(String nombreArchivo, String contenido){
+        File archivo = new File(nombreArchivo);
+        try{
+            PrintWriter salida = new PrintWriter(archivo);
+            salida.println(contenido);
+            salida.close();
+            System.out.println("Se ah escrito el cuerpo del archivo");
+        }catch(FileNotFoundException e){
+            System.out.println("Ocurrio un error: ");
+            e.printStackTrace(System.out);
+            System.out.println(e.getMessage());
+        }
+    }
 }
