@@ -4,6 +4,7 @@
  */
 package test;
 
+import static ManejoArchivo.ManejoArchivo.escribirArchivo;
 import static ManejoArchivo.ManejoArchivo.crearArchivo;
 /**
  *
@@ -12,6 +13,14 @@ import static ManejoArchivo.ManejoArchivo.crearArchivo;
 public class TestManejoArchivos {
     public static void main(String[] args) {
         var nombreDoc = "prueba.txt";
-        crearArchivo(nombreDoc);
+	
+	//crea el archivo
+        //crearArchivo(nombreDoc);
+	
+	
+	//agrega contenido al archivo
+	escribirArchivo(nombreDoc, "Este es el contenido");
+	
+	
     }
 }

@@ -18,7 +18,7 @@ public class ManejoArchivo {
         try{
             PrintWriter salida = new PrintWriter(archivo);
             salida.close();
-            System.out.println("Se ah creado el archivo");
+            System.out.println("Se ha creado el archivo");
         }catch(FileNotFoundException e){
             System.out.println("Ocurrio un error: ");
             e.printStackTrace(System.out);
@@ -32,7 +32,7 @@ public class ManejoArchivo {
             PrintWriter salida = new PrintWriter(archivo);
             salida.println(contenido);
             salida.close();
-            System.out.println("Se ah escrito el cuerpo del archivo");
+            System.out.println("Se ha escrito el cuerpo del archivo");
         }catch(FileNotFoundException e){
             System.out.println("Ocurrio un error: ");
             e.printStackTrace(System.out);
