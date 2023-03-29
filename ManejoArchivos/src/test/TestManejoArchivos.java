@@ -4,6 +4,7 @@
  */
 package test;
 
+import static ManejoArchivo.ManejoArchivo.leerArchivo;
 import static ManejoArchivo.ManejoArchivo.anexarInfo;
 import static ManejoArchivo.ManejoArchivo.escribirArchivo;
 import static ManejoArchivo.ManejoArchivo.crearArchivo;
@@ -24,9 +25,11 @@ public class TestManejoArchivos {
 		//escribirArchivo(nombreDoc, "Este es el contenido");
 		
 		//escribe contenido del archivo
-		anexarInfo(nombreDoc, "Este es la línea 1");
-		anexarInfo(nombreDoc, "Esta es la línea 2");
+		//anexarInfo(nombreDoc, "Este es la línea 1");
+		//anexarInfo(nombreDoc, "Esta es la línea 2");
 		
+		//leer archivo
+		leerArchivo(nombreDoc);
 		
 
 	}

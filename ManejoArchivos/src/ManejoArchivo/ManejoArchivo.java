@@ -4,8 +4,10 @@
  */
 package ManejoArchivo;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -60,6 +62,24 @@ public class ManejoArchivo {
 			System.out.println("Ocurrio un error: ");
 			ex.printStackTrace(System.out);
 			System.out.println(ex.getMessage());
-		} 
+		}
+	}
+
+	public static void leerArchivo(String nombreArchivo) {
+		var archivo = new File(nombreArchivo);
+		try {
+			var entrada = new BufferedReader(new FileReader(archivo));
+			var lectura = entrada.readLine();
+			while (lectura != null) {
+				System.out.println("-> " + lectura);
+				lectura = entrada.readLine();
+			}
+			entrada.close();
+		} catch (FileNotFoundException ex) {
+			Logger.getLogger(ManejoArchivo.class.getName()).log(Level.SEVERE, null, ex);
+		} catch (IOException ex) {
+			Logger.getLogger(ManejoArchivo.class.getName()).log(Level.SEVERE, null, ex);
+		}
+
 	}
 }
