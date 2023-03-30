@@ -11,12 +11,11 @@ import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 /**
  *
  * @author Alexis
  */
-public class AccesoDatos implements IAccesoDatos{
+public class AccesoDatos implements IAccesoDatos {
 
 	@Override
 	public boolean existe(String nombreRecurso) throws AccesoDatosEX {
@@ -29,34 +28,69 @@ public class AccesoDatos implements IAccesoDatos{
 		File archivo = new File(nombrePelicula);
 		List<Pelicula> peliculas = new ArrayList<>();
 		try {
-			BufferedReader entrada = new BufferedReader(new FileReader(nombrePelicula));
+			var entrada = new BufferedReader(new FileReader(archivo));
 			String linea = null;
 			linea = entrada.readLine();
-			 while(linea != null){
-				 var pelicula = new Pelicula(linea);
-				 peliculas.add(pelicula);
-				 linea = entrada.readLine();
-			 }
-			 entrada.close();
+			while (linea != null) {
+				var pelicula = new Pelicula(linea);
+				peliculas.add(pelicula);
+				linea = entrada.readLine();
+			}
+			entrada.close();
 		} catch (FileNotFoundException ex) {
-			ex.printStackTrace();
-			throw new LecturaDatosEx("Excepción al listar peliculas: "+ ex.getMessage());
-			
+			ex.printStackTrace(System.out);
+			throw new LecturaDatosEx("Excepción al listar peliculas: " + ex.getMessage());
+
 		} catch (IOException ex) {
-			Logger.getLogger(AccesoDatos.class.getName()).log(Level.SEVERE, null, ex);
+			ex.printStackTrace(System.out);
+			throw new LecturaDatosEx("Excepción al listar peliculas: " + ex.getMessage());
 		}
 		return peliculas;
-		
+
 	}
 
 	@Override
 	public void escribir(Pelicula pelicula, String nombrePelicula, boolean anexar) throws EscrituraDatosEx {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		var archivo = new File(nombrePelicula);
+		try {
+			var salida = new PrintWriter(new FileWriter(archivo, anexar));
+			salida.println(pelicula.toString());
+			salida.close();
+			System.out.println("Se ha escrito la información en el archivo: " + pelicula);
+		} catch (IOException ex) {
+			ex.printStackTrace(System.out);
+			throw new EscrituraDatosEx("Excepción al escribir pelicula: " + ex.getMessage());
+		}
 	}
 
 	@Override
 	public String buscar(String nombrePelicula, String buscar) throws LecturaDatosEx {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		var archivo = new File(nombrePelicula);
+		String resultado = null;
+
+		try {
+			var entrada = new BufferedReader(new FileReader(archivo));
+			String linea = null;
+			linea = entrada.readLine();
+			int indice = 1;
+			while(linea != null){
+				if(buscar != null && buscar.equalsIgnoreCase(linea)){
+					resultado = "Pelicula "+ linea + " en el indice" + indice;
+					break;
+				}
+				linea = entrada.readLine();
+				indice++;
+			}
+			entrada.close();
+		} catch (FileNotFoundException ex) {
+			ex.printStackTrace(System.out);
+			throw new LecturaDatosEx("Excepción al escribir pelicula: " + ex.getMessage());
+		} catch (IOException ex) {
+			ex.printStackTrace(System.out);
+			throw new LecturaDatosEx("Excepción al escribir pelicula: " + ex.getMessage());
+		}
+
+		return resultado;
 	}
 
 	@Override
@@ -68,5 +102,5 @@ public class AccesoDatos implements IAccesoDatos{
 	public void borrar(String nombrePelicula) throws AccesoDatosEX {
 		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
-	
+
 }

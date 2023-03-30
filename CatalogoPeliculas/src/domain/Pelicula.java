@@ -31,6 +31,6 @@ public class Pelicula implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Nombre Pelicula: " + nombre;
+		return "Nombre Pelicula: " + this.nombre;
 	}
 }
