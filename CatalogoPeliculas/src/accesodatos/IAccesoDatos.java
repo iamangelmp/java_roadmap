@@ -2,16 +2,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package datos;
+package accesodatos;
 
 /**
  *
  * @author Alexis
  */
-public interface AccesoDatos {
+public interface IAccesoDatos {
 	
-	public static void
-
-
 	
+	void insertar ();
+	
+	void actualizar();
+	
+	void eliminar();
+	
+	void listar();
+
 }
