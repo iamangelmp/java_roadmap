@@ -8,7 +8,7 @@ package exceptions;
  *
  * @author Alexis
  */
-public class EscrituraDatosEx extends AccesoDatos {
+public class EscrituraDatosEx extends AccesoDatosEX {
 	
 	public EscrituraDatosEx(String msj) {
 		super(msj);

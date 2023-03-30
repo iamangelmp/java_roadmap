@@ -4,13 +4,15 @@
  */
 package domain;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Alexis
  */
-public class Pelicula {
+public class Pelicula implements Serializable{
 
-	private String nombre;
+	private String nombre; 
 
 	public Pelicula() {
 	}

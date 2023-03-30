@@ -8,9 +8,9 @@ package exceptions;
  *
  * @author Alexis
  */
-public class AccesoDatos extends Exception {
+public class AccesoDatosEX extends Exception {
 
-	public AccesoDatos(String msj) {
+	public AccesoDatosEX(String msj) {
 		super(msj);
 	}
 }

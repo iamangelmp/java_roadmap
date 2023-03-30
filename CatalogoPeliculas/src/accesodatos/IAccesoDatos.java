@@ -4,19 +4,28 @@
  */
 package accesodatos;
 
+import domain.Pelicula;
+import exceptions.AccesoDatosEX;
+import exceptions.EscrituraDatosEx;
+import exceptions.LecturaDatosEx;
+import java.util.List;
+
 /**
  *
  * @author Alexis
  */
 public interface IAccesoDatos {
 	
+	boolean existe(String nombreRecurso) throws AccesoDatosEX;
 	
-	void insertar ();
+	List <Pelicula> listar() throws LecturaDatosEx;
 	
-	void actualizar();
+	void escribir(Pelicula pelicula, String nombrePelicula, boolean anexar) throws EscrituraDatosEx;
 	
-	void eliminar();
+	String buscar(String nombrePelicula, String buscar) throws LecturaDatosEx;
 	
-	void listar();
-
+	void crear(String nombrePelicula) throws AccesoDatosEX;
+	
+	void borrar(String nombrePelicula) throws AccesoDatosEX;
+	
 }

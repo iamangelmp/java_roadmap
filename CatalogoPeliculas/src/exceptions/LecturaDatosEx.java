@@ -8,7 +8,7 @@ package exceptions;
  *
  * @author Alexis
  */
-public class LecturaDatosEx extends AccesoDatos{
+public class LecturaDatosEx extends AccesoDatosEX{
 	
 	public LecturaDatosEx(String msj) {
 		super(msj);
