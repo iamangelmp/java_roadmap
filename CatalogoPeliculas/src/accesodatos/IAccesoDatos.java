@@ -18,7 +18,7 @@ public interface IAccesoDatos {
 	
 	boolean existe(String nombreRecurso) throws AccesoDatosEX;
 	
-	List <Pelicula> listar() throws LecturaDatosEx;
+	List <Pelicula> listar(String nombrePelicula) throws LecturaDatosEx;
 	
 	void escribir(Pelicula pelicula, String nombrePelicula, boolean anexar) throws EscrituraDatosEx;
 	
