@@ -95,12 +95,25 @@ public class AccesoDatos implements IAccesoDatos {
 
 	@Override
 	public void crear(String nombrePelicula) throws AccesoDatosEX {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		var archivo = new File(nombrePelicula);
+		try {
+			var salida = new PrintWriter (FileWriter(archivo));
+			salida.close();
+			System.out.println("Se ha creado el archivo");
+		} catch (IOException ex) {
+			ex.printStackTrace();
+			throw new AccesoDatosEX ("error: "+ ex.getMessage());
+		}
 	}
 
 	@Override
 	public void borrar(String nombrePelicula) throws AccesoDatosEX {
-		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+		var archivo = new File(nombrePelicula);
+		if(archivo.exists()){
+			archivo.delete();
+			System.out.println("se ha borrado el archivo");
+		}
+		
 	}
 
 }
