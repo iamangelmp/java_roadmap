@@ -18,3 +18,5 @@
 /APIColeccionGenericas/build/
 /ManejoArchivos/nbproject/private/
 /ManejoArchivos/build/
+*.iml
+.idea
