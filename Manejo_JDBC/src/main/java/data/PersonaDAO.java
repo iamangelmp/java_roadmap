@@ -4,8 +4,7 @@ import static data.Conexion.getConexion;
 import domain.Persona;
 import java.sql.*;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 public class PersonaDAO {
 
@@ -39,6 +38,8 @@ public class PersonaDAO {
 		} finally {
 			try {
 				Conexion.close(conn);
+				Conexion.close(stmnt);
+				Conexion.close(rs);
 			} catch (SQLException ex) {
 				ex.printStackTrace(System.out);
 			}
