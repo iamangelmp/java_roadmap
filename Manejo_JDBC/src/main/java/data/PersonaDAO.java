@@ -5,10 +5,10 @@ import domain.Persona;
 import java.sql.*;
 import java.util.*;
 
-
 public class PersonaDAO {
 
 	private static final String SQL_SELECT = "SELECT * FROM PERSONA";
+	private static final String SQL_INSERT = "INSERT INTO PERSONA (nombre, apellido, email, telefono) VALUES (?,?,?,?)";
 
 	public List<Persona> seleccionar() {
 		Connection conn = null;
@@ -45,6 +45,35 @@ public class PersonaDAO {
 			}
 		}
 		return personas;
+	}
+
+	public int insertar(Persona persona) {
+		Connection conn = null;
+		PreparedStatement tsmnt = null;
+		int registros = 0;
+
+		try {
+			conn = getConexion();
+			tsmnt = conn.prepareStatement(SQL_INSERT);
+			tsmnt.setString(1, persona.getNombre());
+			tsmnt.setString(2, persona.getApellido());
+			tsmnt.setString(3, persona.getEmail());
+			tsmnt.setString(4, persona.getTelefono());
+
+			registros = tsmnt.executeUpdate();
+
+		} catch (SQLException ex) {
+			ex.printStackTrace(System.out);
+		} finally {
+			try {
+				Conexion.close(conn);
+				Conexion.close(tsmnt);
+			} catch (SQLException ex) {
+				ex.printStackTrace(System.out);
+			}
+		}
+		return registros;
+
 	}
 
 }
